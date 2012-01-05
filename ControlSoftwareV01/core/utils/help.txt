@@ -1,0 +1,30 @@
+ IPython allows autocompletion: start writting a word and press tab (autocompletes to known command), or uparrow to toggle within the last commands with the same first letters. use function? for the help of any function.
+
+Quick start:
+################################################
+1) newSessionDir()
+	opens in the defaultSaveDir a subfolder where all subsequent traces will be saved
+ex: newSessionDir("toroid14_Vacuum")
+
+################################################
+2) quickSpe()
+	equivalent to:
+	e = defaultDevice("ESA")
+	s = e.getTrace()
+	s.fit()
+	s.save()
+arguments of quickSpe will be passed to getTrace
+ex: quickSpe("resonance1",model = "LorentzGauss")
+
+##################################################
+3) e = defaultDevice(deviceType)
+	returns the default device corresponding to type deviceType as defined in conf/hardware.cfg
+ex: e.defaultDevice("SCOPE")
+press e. + tab for a list of available commands on the device
+(for an ESA, try e.g.: e.setRange(10*MHz,100*MHz))
+
+#################################################
+4)For rapid manual operations, right click on plot windows to display a context menu, show cursors, you can then fit plenty of functions on the selected curve...
+
+####################################################
+for further details see He3Control/presentation.ppt
